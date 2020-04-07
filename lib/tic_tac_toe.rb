@@ -68,3 +68,39 @@ def current_player(board)
     return "O"
   end
 end
+
+def won?(board)
+  WIN_COMBINATIONS.any? do |win_state|
+    if (win_state.all? {|index| position_taken?(board,index)}) && (win_state.all? {|index| board[index] == "X"} || win_state.all? {|index| board[index] == "O"})
+      return win_state
+    end
+  end
+end
+
+def full?(board)
+  return_value = true
+  board.each do |index|
+    if (index.nil? || index == " ")
+      return_value = false
+    end
+  end
+  return return_value
+end
+
+def draw?(board)
+  if full?(board) && !won?(board)
+    return true
+  end
+end
+
+def over?(board)
+  if won?(board) || draw?(board) || full?(board)
+    return true
+  end
+end
+
+def winner(board)
+  if won?(board)
+    return board[won?(board)[0]]
+  end
+end
