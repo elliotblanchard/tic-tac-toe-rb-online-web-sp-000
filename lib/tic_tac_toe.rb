@@ -57,4 +57,5 @@ def turn_count(board)
   if !(index.nil? || index == " ")
     counter += 1
   end
+  return counter
 end
