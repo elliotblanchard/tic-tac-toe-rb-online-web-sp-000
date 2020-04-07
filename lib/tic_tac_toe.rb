@@ -52,5 +52,9 @@ end
 
 #turn_count
 def turn_count(board)
-
+  counter = 0
+  board.each do |index|
+  if !(index.nil? || index == " ")
+    counter += 1
+  end
 end
