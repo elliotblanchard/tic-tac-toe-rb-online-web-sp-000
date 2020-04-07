@@ -113,6 +113,6 @@ def play(board)
   if draw?(board)
     puts "Cat's Game!"
   else
-    puts current_player(board)
+    puts winner(board)
   end
 end
