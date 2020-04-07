@@ -49,3 +49,13 @@ def turn(board)
   else turn(board)
   end
 end
+
+#turn_count
+def turn_count(board)
+  counter = 0
+  board.each do |index|
+  if !(index.nil? || index == " ")
+    counter += 1
+  end
+  return counter
+end
