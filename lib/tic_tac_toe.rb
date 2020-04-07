@@ -110,7 +110,9 @@ def play(board)
   until over?(board)
     turn(board)
   end
-  if current_player(board) == "O"
+  if draw?(board)
+    puts "Cat's Game!"
+  else current_player(board) == "O"
     puts "Congratulations X!"
   else
     puts "Congratulations O!"
