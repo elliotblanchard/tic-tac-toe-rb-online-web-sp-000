@@ -110,5 +110,9 @@ def play(board)
   until over?(board)
     turn(board)
   end
-  puts "Congratulations #{current_player(board)}!"
+  if current_player(board) == "O"
+    puts "Congratulations X!"
+  else
+    puts "Congratulations O!"
+  end
 end
